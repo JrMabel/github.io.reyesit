@@ -71,6 +71,7 @@ demo-pagina body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  flex-grow: 1; /* Añade esta línea */
 }
 
 .demo-form-group {
@@ -174,6 +175,7 @@ demo-pagina body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  margin-top: auto; /* Empuja el botón hacia abajo */
 }
 
 .demo-submit-btn:hover {
@@ -192,18 +194,10 @@ demo-pagina body {
 }
 
 .demo-website-preview {
-  background: white;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow);
-  overflow: hidden;
-  transform: scale(0.9);
-  transform-origin: top;
-  transition: var(--transition);
+  width: 100%;
+  height: 100%;
 }
 
-.demo-website-preview:hover {
-  transform: scale(0.91);
-}
 
 /* Navbar de vista previa */
 .demo-preview-nav {
@@ -461,8 +455,9 @@ body {
 .demo-main-content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: stretch; /* Añade esta línea */
 }
 
 @media (max-width: 992px) {
@@ -472,17 +467,21 @@ body {
   }
   
   .demo-preview-container {
-    position: static;
-    margin-top: 1rem;
+  position: sticky;
+  top: 2rem;
+  height: 100%; /* Añade esta línea */
   }
 }
 
 /* Formulario responsivo */
 .demo-form-section {
   background: var(--white-color);
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
+  height: 100%; /* Añade esta línea */
+  display: flex; /* Añade esta línea */
+  flex-direction: column; /* Añade esta línea */
 }
 
 .demo-custom-form {
@@ -547,8 +546,10 @@ body {
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   overflow: hidden;
-  /* Eliminamos las transformaciones que causaban el efecto no deseado */
-  width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
+  height: 100%; /* Añade esta línea */
+  display: flex; /* Añade esta línea */
+  flex-direction: column; /* Añade esta línea */
+  transform: none; /* Elimina la transformación que reduce el tamaño */
 }
 
 .demo-preview-nav {
