@@ -17,6 +17,7 @@
     <!-- Añade estas librerías en tu head -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
     
@@ -25,7 +26,7 @@
     <div class="container-fluid px-3">
         <!-- Logo -->
         <a class="navbar-brand" href="index.html">
-            <img src="/images/logo.png" alt="Logo Reyes Castellanos" class="logo-img">
+            <img src="images/logo.png" alt="Logo Reyes Castellanos" class="logo-img">
         </a>
         
         <!-- Botón hamburguesa -->
@@ -71,8 +72,7 @@
         </div>
     </div>
 </nav>
-
-    <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="hero position-relative overflow-hidden py-4">
     </div>
     <!-- Fondo animado minimalista -->
@@ -89,7 +89,15 @@
                 <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s" data-key="hero-description">
                     Diseño único y desarrollo a medida para negocios que buscan destacar online
                 </p>
-
+                
+        <div class="d-flex justify-content-center flex-wrap gap-2 animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="contact.html" class="btn btn-primary btn-md px-4 rounded-pill" data-key="request-service">
+                <i class="fas fa-paper-plane me-2"></i> Contactar
+            </a>
+            <a href="services.html" class="btn btn-outline-light btn-md px-4 rounded-pill" data-key="view-services">
+                <i class="fas fa-laptop-code me-2"></i> Servicios
+            </a>
+        </div>
 
 
             </div>
@@ -144,62 +152,44 @@
                     </div>
                     
                     <div class="col-md-7 bg-white p-5">
-                        <form id="contactForm" novalidate>
-                            <div class="mb-4">
-                                <label for="name" class="form-label fw-bold">Nombre completo *</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-user text-primary"></i></span>
-                                    <input type="text" class="form-control border-start-0 ps-2" id="name" placeholder="Nombre" required>
-                                    <div class="invalid-feedback">Por favor ingresa tu nombre</div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="email" class="form-label fw-bold">Correo electrónico *</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-envelope text-primary"></i></span>
-                                    <input type="email" class="form-control border-start-0 ps-2" id="email" placeholder="tucorre@algo.com" required>
-                                    <div class="invalid-feedback">Por favor ingresa un email válido</div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="telephone" class="form-label fw-bold">Teléfono</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-phone text-primary"></i></span>
-                                    <input type="tel" class="form-control border-start-0 ps-2" id="telephone" placeholder="+41 76 785 10 11">
-                                </div>
-                            </div>
+                     <form id="contactForm">
+  <div class="mb-3">
+    <label for="name" class="form-label fw-bold">Nombre completo</label>
+    <input type="text" class="form-control" id="name" placeholder="Nombre completo" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label fw-bold">Correo electrónico</label>
+    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+  </div>
+  <div class="mb-3">
+    <label for="telephone" class="form-label fw-bold">Teléfono</label>
+    <input type="tel" class="form-control" id="telephone" placeholder="Teléfono" required>
+  </div>
                             
                             <div class="mb-4">
                                 <label for="service" class="form-label fw-bold">¿Qué servicio necesitas?</label>
                                 <select class="form-select" id="service">
                                     <option selected disabled>Selecciona una opción</option>
-                                    <option>Desarrollo Web</option>
+                                    <option>Web: Diseño, Desarrollo, Administración</option>
                                     <option>Aplicaciones de Escritorio</option>
-                                    <option>Solución CPQ</option>
-                                    <option>Consultoría</option>
+                                    <option>Aplicaciones Móviles</option>
+                                    <option>Integraciones y Salesforce CPQ</option>
                                     <option>Otro</option>
                                 </select>
                             </div>
                             
                             <div class="mb-4">
-                                <label for="message" class="form-label fw-bold">Mensaje *</label>
-                                <textarea class="form-control" id="message" rows="4" placeholder="Describe tu proyecto o consulta..." required></textarea>
-                                <div class="invalid-feedback">Por favor ingresa tu mensaje</div>
-                            </div>
-                            
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg py-3">
-                                    <span class="submit-text">Enviar mensaje</span>
-                                    <span class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            
-                            <div id="formAlert" class="alert alert-success mt-3 mb-0 d-none" role="alert">
-                                <i class="fas fa-check-circle me-2"></i>¡Mensaje enviado correctamente! Te responderé pronto.
-                            </div>
-                        </form>
+ <label for="message" class="form-label fw-bold">Mensaje</label>
+    <textarea class="form-control" id="message" rows="3" placeholder="Escribe tu mensaje..." required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">
+    <span class="submit-text">Enviar mensaje</span>
+    <span class="spinner-border spinner-border-sm d-none ms-2" role="status" aria-hidden="true"></span>
+  </button>
+  <div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">
+    ¡Mensaje enviado con éxito!
+  </div>
+</form>
                     </div>
                 </div>
             </div>
@@ -314,11 +304,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             const telephone = document.getElementById('telephone').value;
+            const service = document.getElementById("service").value;
 
 
             db.ref('mensajes').push({
                 nombre: name,
                 correo: email,
+                servicio: service,
                 mensaje: message,
                 telefono: telephone,
                 fecha: new Date().toISOString()
@@ -330,6 +322,71 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     </script>
+
+    <script>
+  // Inicializar EmailJS
+  emailjs.init("QKHlV8I9Og19B726v"); // <-- reemplaza con tu User ID real
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const submitBtn = this.querySelector('button[type="submit"]');
+  const submitText = submitBtn.querySelector('.submit-text');
+  const spinner = submitBtn.querySelector('.spinner-border');
+
+  submitText.textContent = 'Enviando...';
+  spinner.classList.remove('d-none');
+  submitBtn.disabled = true;
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const telephone = document.getElementById("telephone").value;
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("message").value;
+  const logoURL = "IT Reyes"
+
+  const templateParams = {
+    nombre: name,
+    email: email,
+    telefono: telephone,
+    servicio: service,
+    mensaje: message,
+    logoURL: logoURL
+    
+  };
+
+  // Guardar en Firebase
+  db.ref('mensajes').push({
+    nombre: name,
+    correo: email,
+    telefono: telephone,
+    servicio: service,
+    mensaje: message,
+    fecha: new Date().toISOString()
+  }).then(() => {
+    // Enviar con EmailJS
+    return emailjs.send("service_3ao08dt", "template_k3l54fg", templateParams);
+  }).then(() => {
+    document.getElementById("formAlert").classList.remove("d-none");
+    document.getElementById("contactForm").reset();
+
+    submitText.textContent = 'Enviar mensaje';
+    spinner.classList.add('d-none');
+    submitBtn.disabled = false;
+
+    setTimeout(() => {
+      document.getElementById("formAlert").classList.add("d-none");
+    }, 5000);
+  }).catch((error) => {
+    console.error("Error al enviar el mensaje:", error); // <-- agrega esto
+    alert("Error al enviar el mensaje: " + error.text || error);
+    submitText.textContent = 'Enviar mensaje';
+    spinner.classList.add('d-none');
+    submitBtn.disabled = false;
+  });
+});
+
+</script>
+
 
 </body>   <!-- Llamado a la acción -->
 
