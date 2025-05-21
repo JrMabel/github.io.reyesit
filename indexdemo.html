@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 <script src="funciones.js" defer></script>
 </head>
 <body>
@@ -134,101 +135,102 @@
     </div>
 </section>
 
-  <div class="app-container">
-    <header class="app-header">
+<div class="demo-pagina">
+  <div class="demo-app-container">
+    <header class="demo-app-header">
       <h1><i class="bi bi-magic"></i> IT Reyes - Crea tu Web</h1>
       <p>Crea una vista previa de tu página de inicio en minutos</p>
     </header>
 
-    <div class="main-content">
-      <div class="form-section">
-        <form id="previewForm" class="custom-form">
-          <div class="form-group">
-            <label for="businessName">Nombre de la Empresa:</label>
-            <input type="text" id="businessName" placeholder="Ej. IT Reyes - Pizzeria" required>
+    <div class="demo-main-content">
+      <div class="demo-form-section">
+        <form id="demo-previewForm" class="demo-custom-form">
+          <div class="demo-form-group">
+            <label for="demo-businessName">Nombre de la Empresa:</label>
+            <input type="text" id="demo-businessName" placeholder="Ej. IT Reyes - Pizzeria" required>
           </div>
 
-          <div class="form-group">
-            <label for="businessSlogan">Slogan (opcional):</label>
-            <input type="text" id="businessSlogan" placeholder="Ej. Las mejores pizzas del mundo">
+          <div class="demo-form-group">
+            <label for="demo-businessSlogan">Slogan (opcional):</label>
+            <input type="text" id="demo-businessSlogan" placeholder="Ej. Las mejores pizzas del mundo">
           </div>
 
-          <div class="form-group">
-            <label for="logoInput">Logo de la empresa:</label>
-            <div class="file-upload">
-              <input type="file" id="logoInput" accept="image/*" required>
-              <label for="logoInput" class="upload-btn">
+          <div class="demo-form-group">
+            <label for="demo-logoInput">Logo de la empresa:</label>
+            <div class="demo-file-upload">
+              <input type="file" id="demo-logoInput" accept="image/*" required>
+              <label for="demo-logoInput" class="demo-upload-btn">
                 <i class="fas fa-upload"></i> Seleccionar archivo
               </label>
-              <span id="fileName">No se ha seleccionado archivo</span>
+              <span id="demo-fileName">No se ha seleccionado archivo</span>
             </div>
           </div>
 
-          <div class="form-group color-picker">
+          <div class="demo-form-group demo-color-picker">
             <label>Selecciona tus colores:</label>
-            <div class="color-options">
-              <div class="color-option">
-                <label for="primaryColor">Color principal:</label>
-                <input type="color" id="primaryColor" value="#4a6fa5">
+            <div class="demo-color-options">
+              <div class="demo-color-option">
+                <label for="demo-primaryColor">Color principal:</label>
+                <input type="color" id="demo-primaryColor" value="#4a6fa5">
               </div>
-              <div class="color-option">
-                <label for="secondaryColor">Color secundario:</label>
-                <input type="color" id="secondaryColor" value="#ff7e5f">
+              <div class="demo-color-option">
+                <label for="demo-secondaryColor">Color secundario:</label>
+                <input type="color" id="demo-secondaryColor" value="#ff7e5f">
               </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="templateSelect">Estilo de plantilla:</label>
-            <select id="templateSelect">
+          <div class="demo-form-group">
+            <label for="demo-templateSelect">Estilo de plantilla:</label>
+            <select id="demo-templateSelect">
               <option value="modern">Moderno</option>
               <option value="elegant">Elegante</option>
               <option value="minimal">Minimalista</option>
             </select>
           </div>
 
-          <button type="submit" class="submit-btn">
+          <button type="submit" class="demo-submit-btn">
             <i class="fas fa-eye"></i> Generar Vista Previa
           </button>
         </form>
       </div>
 
-      <div class="preview-section">
-        <div class="preview-container">
-          <div id="websitePreview" class="website-preview">
-            <nav id="previewNav" class="preview-nav">
-              <div class="nav-logo-container">
-                <img id="logoPreview" src="" alt="Logo de la empresa" class="nav-logo">
-                <span id="namePreviewNav" class="nav-brand"></span>
+      <div class="demo-preview-section">
+        <div class="demo-preview-container">
+          <div id="demo-websitePreview" class="demo-website-preview">
+            <nav id="demo-previewNav" class="demo-preview-nav">
+              <div class="demo-nav-logo-container">
+                <img id="demo-logoPreview" src="" alt="Logo de la empresa" class="demo-nav-logo">
+                <span id="demo-namePreviewNav" class="demo-nav-brand"></span>
               </div>
-              <ul class="nav-menu">
-                <li class="active">Inicio</li>
+              <ul class="demo-nav-menu">
+                <li class="demo-active">Inicio</li>
                 <li>Servicios</li>
                 <li>Productos</li>
                 <li>Contacto</li>
               </ul>
             </nav>
 
-            <header class="preview-header">
-              <div class="header-content">
-                <h1 id="namePreview"></h1>
-                <p id="sloganPreview"></p>
-                <button class="cta-button">Conócenos</button>
+            <header class="demo-preview-header">
+              <div class="demo-header-content">
+                <h1 id="demo-namePreview"></h1>
+                <p id="demo-sloganPreview"></p>
+                <button class="demo-cta-button">Conócenos</button>
               </div>
             </header>
 
-            <section class="preview-features">
-              <div class="feature">
+            <section class="demo-preview-features">
+              <div class="demo-feature">
                 <i class="fas fa-star"></i>
                 <h3>Calidad</h3>
                 <p>Productos de la más alta calidad para nuestros clientes.</p>
               </div>
-              <div class="feature">
+              <div class="demo-feature">
                 <i class="fas fa-truck"></i>
                 <h3>Envío</h3>
                 <p>Entregamos a domicilio en menos de 24 horas.</p>
               </div>
-              <div class="feature">
+              <div class="demo-feature">
                 <i class="fas fa-headset"></i>
                 <h3>Soporte</h3>
                 <p>Nuestro equipo está siempre disponible para ayudarte.</p>
@@ -239,17 +241,18 @@
       </div>
     </div>
 
-    <div class="actions-section">
-<!--       <button id="downloadBtn" class="action-btn" disabled>
+    <div class="demo-actions-section">
+<!--       <button id="demo-downloadBtn" class="demo-action-btn" disabled>
         <i class="fas fa-download"></i> Descargar Código
       </button> -->
-<!--       <button id="shareBtn" class="action-btn" disabled>
+<!--       <button id="demo-shareBtn" class="demo-action-btn" disabled>
         <i class="fas fa-share-alt"></i> Compartir Vista Previa
       </button> -->
     </div>
   </div>
 
   <script src="scriptdemo.js"></script>
+</div>
 
   
     <!-- Llamado a la acción -->
