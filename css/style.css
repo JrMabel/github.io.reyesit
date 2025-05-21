@@ -1,0 +1,1103 @@
+/* Estilos generales */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #8c8ef1;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+            --success-color: #4cc9f0;
+            --warning-color: #2925f7;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* Barra de navegación */
+.navbar {
+     background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat; 
+    /* background-color: var(--primary-color); */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    min-height: 70px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+.navbar.bg-dark {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+        backdrop-filter: blur(5px);
+        transition: background-color 0.3s ease;
+    }
+
+
+/* Logo */
+.navbar-brand {
+    padding: 0;
+    margin-right: 2rem !important;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+}
+.navbar-toggler:focus {
+    box-shadow: none; /* Quita el outline al hacer clic */
+}
+.navbar-collapse {
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.navbar, 
+.container-fluid {
+    overflow: visible !important;
+}
+
+#navbarNav {
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+}
+@media (max-width: 991.98px) {
+    #navbarNav {
+     background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat; 
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 5px;
+    }
+    .nav-link {
+        color: white !important; /* Texto visible */
+    }
+}
+
+.logo-img {
+    max-height: 90px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Items del menú - Modificado para una sola línea */
+.nav-item {
+    white-space: nowrap; /* Evita el salto de línea */
+    margin: 0 10px; /* Ajuste de margen */
+}
+
+.nav-link {
+        color: var(--light-color) !important; /* color claro definido en :root */
+    /* o */
+    color: #f1f1f1 !important; /* color hexadecimal claro */
+    /* o */
+    color: black !important; /* si quieres letras oscuras */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    color: #2600ff !important;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    background: currentColor;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+/* Selector de idiomas mejorado */
+.language-selector-wrapper {
+    position: relative;
+    display: inline-block;
+    min-width: 150px;
+    margin-left: 15px;
+}
+
+.language-flag {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: auto;
+    z-index: 2;
+}
+
+.language-selector-custom {
+    padding: 6px 35px 6px 40px !important;
+    background-color: var(--primary-color) !important; /* igual al navbar */
+    color: var(--light-color) !important;              /* igual que los links del navbar */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    height: 38px;
+    transition: all 0.3s ease;
+    width: auto;
+    font-size: 1rem;
+    backdrop-filter: blur(5px); /* efecto vidrio esmerilado */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* mismo estilo que nav-link */
+}
+
+/* Dropdown desplegado */
+.language-selector-custom option {
+    color: var(--light-color) !important;
+    background-color: var(--primary-color) !important;
+    padding: 8px 15px !important;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Consistencia visual */
+}
+
+/* Opción seleccionada */
+.language-selector-custom option:checked {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--light-color) !important;
+}
+
+/* Hover */
+.language-selector-custom option:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: var(--light-color) !important;
+}
+
+/* Flecha */
+.dropdown-arrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+    z-index: 2;
+    font-size: 0.8rem;
+    color: transparent;
+}
+
+/* Menú en móvil */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat;
+        padding: 20px;
+        z-index: 1000;
+        height: auto !important;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+    
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    
+    .nav-link {
+        padding: 12px 15px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        display: block;
+        font-size: 1.1rem; /* Tamaño de fuente más grande */
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .language-selector-wrapper {
+        margin: 20px 0;
+        width: 100%;
+    }
+    
+    .logo-img {
+        height: 50px;
+    }
+}
+
+/* Hero Section */
+.hero {
+     background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat;
+
+    /* background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); */
+    color: white;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.hero-background {
+    position: absolute;
+    width: 100%;
+    background-attachment: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.circle-animation {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    top: -200px;
+    right: -200px;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #63b3ed, #90cdf4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.z-index-2 {
+    z-index: 2;
+    position: relative;
+}
+
+/* Ilustración de diseño web */
+.web-design-illustration {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+}
+
+.browser-window {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.browser-header {
+    background: #f1f1f1;
+    padding: 8px 12px;
+    display: flex;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.browser-content {
+    padding: 15px;
+    background: #f8fafc;
+    min-height: 120px;
+}
+
+.code-line {
+    height: 12px;
+    background: #e2e8f0;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.code-line.short { width: 70%; }
+.code-line.medium { width: 85%; }
+
+@media (max-width: 992px) {
+    .hero {
+        text-align: center;
+    }
+    .d-flex {
+        justify-content: center;
+    }
+}
+
+/* Secciones */
+.section {
+    
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 15px auto;
+}
+
+/* Tarjetas de servicios */
+.service-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card .card-body {
+    padding: 25px;
+    flex: 1;
+}
+
+.service-card .card-title {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 2rem; /* Tamaño adecuado */
+    color: #0d6efd; /* Color azul de Bootstrap */
+    margin-bottom: 1rem;
+}
+
+/* .py-4 {
+         background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat; 
+
+} */
+
+/* Formulario de contacto */
+.contact-form {
+    background-color: var(--light-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-control {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form textarea.form-control {
+    min-height: 150px;
+}
+
+/* Pie de página */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0 20px;
+}
+
+.footer h5 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer a {
+    color: var(--light-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: var(--secondary-color);
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 50px 0;
+    }
+}
+/* Estilos para el botón de cierre */
+.navbar-close-btn {
+    display: none; /* Oculto por defecto en desktop */
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    background: none;
+    border: none;
+}
+
+.navbar-close-btn:hover {
+    color: #2600ff;
+    transform: scale(1.1);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-close-btn {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    /* Ajuste para el selector de idiomas en móvil */
+    .language-selector-wrapper {
+        margin-right: 40px; /* Espacio para la X */
+    }
+}
+/* Estilos para el botón de cierre */
+.navbar-close-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.navbar-close-btn:hover {
+    color: #2600ff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-close-btn {
+        display: block;
+    }
+    
+    /* Ajustamos el padding derecho del menú para la X */
+    #navbarNav {
+        padding-right: 50px;
+    }
+    
+    /* Ajustamos el selector de idiomas para que no se solape */
+    .language-selector-wrapper {
+        margin-right: 30px;
+    }
+}
+/* Estilos para el toggler personalizado */
+/* Estilos esenciales para el toggler */
+.custom-toggler {
+  border: none;
+  padding: 0.5rem;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background: transparent !important;
+  transition: all 0.3s ease;
+}
+
+.custom-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Ícono de hamburguesa por defecto */
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5em;
+    height: 1.5em;
+    transition: all 0.3s ease;
+}
+
+/* Ícono de cierre (X) */
+.custom-toggler .close-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    line-height: 1;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Estado expandido */
+.custom-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    opacity: 0;
+}
+
+.custom-toggler[aria-expanded="true"] .close-icon {
+    opacity: 1;
+}
+
+.custom-toggler[aria-expanded="true"] .close-icon:hover {
+    color: #2600ff;
+}
+
+/* Estilos para el toggler permanente */
+.persistent-toggler {
+    border: none;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.persistent-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Ícono de hamburguesa siempre visible */
+.persistent-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5em;
+    height: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover opcional */
+.persistent-toggler:hover .navbar-toggler-icon {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Efecto cuando el menú está abierto */
+.persistent-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    transform: rotate(90deg);
+}
+/* Icono de hamburguesa (tres líneas) */
+.custom-toggler .hamburger-icon {
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: white;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.custom-toggler .hamburger-icon::before,
+.custom-toggler .hamburger-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: white;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.custom-toggler .hamburger-icon::before {
+  top: -8px;
+}
+
+.custom-toggler .hamburger-icon::after {
+  top: 8px;
+}
+
+/* Estado cuando el menú está abierto */
+.custom-toggler[aria-expanded="true"] .hamburger-icon {
+  background: transparent;
+}
+
+.custom-toggler[aria-expanded="true"] .hamburger-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.custom-toggler[aria-expanded="true"] .hamburger-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Oculta el icono por defecto de Bootstrap */
+.custom-toggler .navbar-toggler-icon {
+  display: none !important;
+}
+
+/*Esto es para el chatbot/*
+/* Animaciones */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(67, 97, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
+        }
+        
+        /* Estilos generales del chatbot */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 380px;
+            height: 550px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            z-index: 1000;
+            overflow: hidden;
+            transform: translateY(120%);
+            opacity: 0;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        #chatbot-container.open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Encabezado del chatbot */
+        .chatbot-header {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat; 
+            /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+            color: white;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .chatbot-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+            filter: blur(4px);
+            z-index: -1;
+        }
+        
+        .chatbot-title {
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chatbot-title i {
+            font-size: 20px;
+            color: white;
+            /* color: var(--success-color); */
+        }
+        
+        .chatbot-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chatbot-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+        
+        /* Área de mensajes */
+        .chatbot-messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: var(--light-color);
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: var(--border-radius);
+            line-height: 1.5;
+            position: relative;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease-out;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .bot-message {
+            background-color: white;
+            color: var(--dark-color);
+            border-top-left-radius: 5px;
+            align-self: flex-start;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .bot-message:first-child {
+            border-top-left-radius: var(--border-radius);
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat; 
+            color: white;
+            border-top-right-radius: 5px;
+            margin-left: auto;
+            box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+        }
+        
+        .user-message:first-child {
+            border-top-right-radius: var(--border-radius);
+        }
+        
+        /* Indicador de que el bot está escribiendo */
+        .typing-indicator {
+            display: flex;
+            padding: 12px 16px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            width: fit-content;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 3px;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); background-color: var(--primary-color); }
+        }
+        
+        /* Área de entrada */
+        .chatbot-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            background-color: white;
+            position: relative;
+        }
+        
+        #chatbot-user-input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            transition: var(--transition);
+            background-color: var(--light-color);
+        }
+        
+        #chatbot-user-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2);
+        }
+        
+        #chatbot-send {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat; 
+            /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(67, 97, 238, 0.3);
+        }
+        
+        #chatbot-send:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(67, 97, 238, 0.4);
+        }
+        
+        #chatbot-send i {
+            font-size: 18px;
+        }
+        
+        /* Botón de apertura */
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(32, 201, 151, 0.9)), url('images/servicios-bg.jpg') center/cover no-repeat; 
+            /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+            animation: float 3s ease-in-out infinite, pulse 2s infinite;
+        }
+        
+        #chatbot-toggle:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+        
+        #chatbot-toggle i {
+            transition: var(--transition);
+        }
+        
+        #chatbot-toggle:hover i {
+            transform: rotate(15deg);
+        }
+        
+        /* Notificación de nuevo mensaje */
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--warning-color);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Estilos para botones de opciones rápidas */
+        .quick-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .quick-option {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 8px 14px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quick-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+            border-color: transparent;
+        }
+        
+        /* Estilo para el botón de formulario */
+        .form-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+            padding: 10px 16px;
+            border-radius: 25px;
+            margin-top: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 13px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+        }
+        
+        .form-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(67, 97, 238, 0.3);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+        
+        .form-button i {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        
+        /* Tarjeta de servicio */
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .service-title i {
+            font-size: 16px;
+        }
+        
+        .service-price {
+            background-color: rgba(72, 149, 239, 0.1);
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-top: 10px;
+            display: inline-block;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        /* Barra de desplazamiento personalizada */
+        .chatbot-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chatbot-messages::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        
+        .chatbot-messages::-webkit-scrollbar-thumb {
+            background-color: rgba(67, 97, 238, 0.3);
+            border-radius: 10px;
+        }
+        
+        .chatbot-messages::-webkit-scrollbar-thumb:hover {
+            background-color: var(--primary-color);
+        }
