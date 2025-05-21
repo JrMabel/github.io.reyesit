@@ -16,7 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const previewNav = document.getElementById('demo-previewNav');
   const previewHeader = document.querySelector('.demo-preview-header');
   const websitePreview = document.getElementById('demo-websitePreview');
+  const businessNameInput = document.getElementById('demo-businessName');
+  const businessSloganInput = document.getElementById('demo-businessSlogan');
+
+    // Actualización en tiempo real del nombre
+  businessNameInput.addEventListener('input', function() {
+    namePreview.textContent = this.value;
+    namePreviewNav.textContent = this.value;
+  });
   
+  // Actualización en tiempo real del slogan
+  businessSloganInput.addEventListener('input', function() {
+    sloganPreview.textContent = this.value || 'Tu eslogan profesional aquí';
+  });
   // Manejar cambio de logo
   logoInput.addEventListener('change', function(e) {
     if (e.target.files.length > 0) {
