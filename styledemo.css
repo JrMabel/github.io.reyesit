@@ -1,0 +1,702 @@
+/* Estilos base */
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #ff7e5f;
+  --dark-color: #333;
+  --light-color: #f8f9fa;
+  --gray-color: #6c757d;
+  --white-color: #ffffff;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #f5f7fa;
+}
+
+/* Estructura principal */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.app-header p {
+  color: var(--gray-color);
+  font-size: 1.1rem;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Formulario */
+.form-section {
+  background: var(--white-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.form-group input[type="text"],
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
+}
+
+/* Subida de archivos */
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.upload-btn {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  padding: 0.75rem;
+  border: 1px dashed var(--gray-color);
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.upload-btn:hover {
+  background-color: #e9ecef;
+  border-color: var(--primary-color);
+}
+
+#fileName {
+  font-size: 0.9rem;
+  color: var(--gray-color);
+  font-style: italic;
+}
+
+/* Selector de colores */
+.color-picker .color-options {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.color-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.color-option input[type="color"] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Botones */
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submit-btn:hover {
+  background-color: #3a5a8c;
+  transform: translateY(-2px);
+}
+
+/* Vista previa */
+.preview-section {
+  position: relative;
+}
+
+.preview-container {
+  position: sticky;
+  top: 2rem;
+}
+
+.website-preview {
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transform: scale(0.9);
+  transform-origin: top;
+  transition: var(--transition);
+}
+
+.website-preview:hover {
+  transform: scale(0.91);
+}
+
+/* Navbar de vista previa */
+.preview-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-logo {
+  height: 40px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-menu li {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-menu li.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+/* Header de vista previa */
+.preview-header {
+  height: 300px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.header-content {
+  max-width: 600px;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background-color: #e66b4a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de características mejorada */
+.preview-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Asegura mínimo 200px por columna */
+  gap: 2rem;
+  padding: 3rem 2rem;
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.feature {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  min-width: 0; /* Evita que los elementos hijos desborden */
+}
+
+/* Ajustes para tablets */
+@media (max-width: 992px) {
+  .preview-features {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 576px) {
+  .preview-features {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+}
+
+/* Resto de estilos se mantienen igual */
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+}
+
+.feature i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+  white-space: nowrap; /* Evita saltos de línea en títulos */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feature p {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+  word-wrap: break-word; /* Manejo de texto largo */
+}
+
+/* Botones de acción */
+.actions-section {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#downloadBtn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#downloadBtn:hover:not(:disabled) {
+  background-color: #3a5a8c;
+}
+
+#shareBtn {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+#shareBtn:hover:not(:disabled) {
+  background-color: #e66b4a;
+}
+/* Estilos base mejorados para responsividad */
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #ff7e5f;
+  --dark-color: #333;
+  --light-color: #f8f9fa;
+  --gray-color: #6c757d;
+  --white-color: #ffffff;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --header-height: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Estructura principal responsiva */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+}
+
+.app-header h1 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Tamaño responsive */
+}
+
+.app-header p {
+  color: var(--gray-color);
+  font-size: clamp(1rem, 2vw, 1.1rem); /* Tamaño responsive */
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .preview-container {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
+/* Formulario responsivo */
+.form-section {
+  background: var(--white-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--dark-color);
+  font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+/* Subida de archivos responsiva */
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.upload-btn {
+  padding: 0.7rem;
+  font-size: 0.95rem;
+}
+
+/* Selector de colores responsivo */
+.color-picker .color-options {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.color-option {
+  min-width: calc(50% - 0.5rem);
+}
+
+/* Botones responsivos */
+.submit-btn {
+  padding: 0.9rem;
+  font-size: 0.95rem;
+}
+
+/* Vista previa responsiva */
+.website-preview {
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  /* Eliminamos las transformaciones que causaban el efecto no deseado */
+  width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
+}
+
+.preview-nav {
+  padding: 0.8rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  height: 35px;
+}
+
+.nav-brand {
+  font-size: 1.1rem;
+}
+
+.nav-menu {
+  width: 100%;
+  order: 3;
+  margin-top: 0.5rem;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.preview-header {
+  height: auto;
+  min-height: 250px;
+  padding: 1.5rem;
+}
+
+.header-content h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.8rem;
+}
+
+.header-content p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1.2rem;
+}
+
+.cta-button {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Sección de características responsiva */
+.preview-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+  gap: 2rem;
+  padding: 3rem 2rem;
+  width: 100%;
+}
+
+.feature {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  min-width: 0; /* Evita desbordamientos */
+}
+
+.feature i {
+  font-size: 2rem;
+}
+
+/* Botones de acción responsivos */
+.actions-section {
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.action-btn {
+  padding: 0.7rem 1.2rem;
+  font-size: 0.9rem;
+  flex: 1 1 auto;
+  min-width: 120px;
+  justify-content: center;
+}
+
+/* Media queries adicionales para móviles pequeños */
+@media (max-width: 576px) {
+  .app-container {
+    padding: 0.8rem;
+  }
+  
+  .form-section, .preview-section {
+    padding: 1.2rem;
+  }
+  
+  .preview-features {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .color-option {
+    min-width: 100%;
+  }
+  
+  .actions-section {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    width: 100%;
+  }
+}
+
+/* Mejoras para tablets */
+@media (max-width: 992px) {
+  .preview-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ajustes para orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .app-header {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .main-content {
+    margin-bottom: 1rem;
+  }
+  
+  .preview-header {
+    min-height: 200px;
+    padding: 1rem;
+  }
+}
+/* Ajustes para móviles - 1 columna */
+@media (max-width: 768px) {
+  .preview-features {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+}
